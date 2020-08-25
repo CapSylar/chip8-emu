@@ -80,9 +80,6 @@ int main ( int argc , char **argv )
         for ( int i = 0 ; i < instr_per_frame && !(waiting_key & 0x80 ); i++ )
             execute_cycle () ;
 
-
-
-
     // detect and map keys
 
     while ( SDL_PollEvent ( &event ) )
@@ -168,7 +165,6 @@ int main ( int argc , char **argv )
 
     if ( frames > 0 )
     {
-
             // update timers
         frames_done += frames ;
         int st = MIN(frames,sound_timer) ; // does not allow decrementing past 0
@@ -195,7 +191,6 @@ int main ( int argc , char **argv )
     }
         SDL_Delay ( 1000/60 ) ; // 60 Hz
 
-
     }
 
     fclose ( program_fp ) ;
@@ -218,8 +213,4 @@ void call_back ( void *userdata , uint8_t *stream , int len ) // callback functi
         if ( !data -> samples ) delete ( &aq ) ; // pop front because all samples are transferred
 
     }
-
-
-
-
 }
