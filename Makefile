@@ -16,7 +16,7 @@ SRCS := main.c
 OBJS := $(SRCS:.c=.o)
 
 # name of executable
-EXEC := a.out
+EXEC := chip8
 
 # default recipe
 all: $(EXEC)
